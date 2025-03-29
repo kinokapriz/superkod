@@ -6,9 +6,9 @@
     <title>Креативные Telegram-боты и сайты | Разработка от 500₽</title>
     
     <!-- Favicon (основные иконки) -->
- <link rel="icon" type="image/png" href="images/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <!-- Цвет темы для мобильных браузеров -->
     <meta name="theme-color" content="#7c3aed">
     
@@ -337,6 +337,31 @@
             100% { transform: scale(1); box-shadow: 0 4px 20px rgba(123, 58, 237, 0.5); }
         }
     </style>
+    <script>
+// Принудительная загрузка всех favicon
+document.addEventListener('DOMContentLoaded', function() {
+    // Основная иконка
+    const favicon32 = document.createElement('link');
+    favicon32.rel = 'icon';
+    favicon32.type = 'image/png';
+    favicon32.href = 'images/favicon-32x32.png?' + new Date().getTime();
+    document.head.appendChild(favicon32);
+
+    // Маленькая иконка (16x16)
+    const favicon16 = document.createElement('link');
+    favicon16.rel = 'icon';
+    favicon16.type = 'image/png';
+    favicon16.sizes = '16x16';
+    favicon16.href = 'images/favicon-16x16.png?' + new Date().getTime();
+    document.head.appendChild(favicon16);
+
+    // Иконка для Apple устройств
+    const appleIcon = document.createElement('link');
+    appleIcon.rel = 'apple-touch-icon';
+    appleIcon.href = 'images/apple-touch-icon.png?' + new Date().getTime();
+    document.head.appendChild(appleIcon);
+});
+</script>
 </head>
 <body>
     <!-- Анимированные элементы фона -->
